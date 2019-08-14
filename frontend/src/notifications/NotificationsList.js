@@ -9,12 +9,13 @@ class NotificationList extends Component {
   }
 
   componentDidMount() {
-    const endpoint = 'http://127.0.0.1:8000/notifications/'
+    const endpoint = 'http://127.0.0.1:8000/notifications/api/unread_count/'
     fetch(endpoint, {
       // mode: 'cors',
       credentials: 'include',
       headers: {
-        'Access-Control-Allow-Origin': 'http://127.0.0.1:8000'
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
       }
     })
       .then(response => response.json())
