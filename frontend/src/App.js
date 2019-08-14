@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
+
+import NotificationsList from './notifications/NotificationsList'
+
+const indexPage = () => {
+  return (
+    <Link maintainScrollPosition={true} to={{
+      pathname: '/notifications/',
+      state: {fromDashboard: false}
+    }}>Notifications</Link>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/notifications/' component={NotificationsList} />
+          <Route exact path='' component={indexPage} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
