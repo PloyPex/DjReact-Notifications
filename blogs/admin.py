@@ -7,5 +7,5 @@ from .models import Blog
 class BlogModelAdmin(admin.ModelAdmin):
     list_display = ('title', 'author')
     search_fields = ('title', 'author')
-    list_filter = ('author')
+    list_filter = ('author',)
     ordering = ('-id',)
