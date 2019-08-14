@@ -11,5 +11,5 @@ def post_save_blog_notify(sender, instance, created, *args, **kwargs):
     if created:
         user = instance.author
         notify.send(user, recipient=user, verb=f"You created blog post - {instance.title}",
-            level='success')
+            level='success', target=instance)
         # at {instance.timestamp}")
