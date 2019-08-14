@@ -7,7 +7,7 @@ import NotificationsList from './notifications/NotificationsList'
 
 const indexPage = () => {
   return (
-    <Link maintainScrollPosition={true} to={{
+    <Link to={{
       pathname: '/notifications/',
       state: {fromDashboard: false}
     }}>Notifications</Link>
