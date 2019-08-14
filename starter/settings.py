@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # django-notifications-hq
     'notifications',
+
+    'blogs',
 ]
 
 MIDDLEWARE = [
